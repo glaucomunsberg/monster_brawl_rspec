@@ -1,0 +1,15 @@
+<h1><%= @monster.name %></h1>
+
+<p><%= @monster.attack %></p>
+<p><%= @monster.defense %></p>
+<p><%= @monster.hp %></p>
+<p><%= @monster.speed %></p>
+
+<ul>
+  <li><%= link_to "Edit", edit_monster_path(@monster) %></li>
+  <li><%= link_to "Destroy", monster_path(@monster), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  } %></li>
+</ul>
+

@@ -1,0 +1,14 @@
+<h1>Monsters</h1>
+
+<ul>
+  <% @monsters.each do |monster| %>
+      <li>
+          <%= link_to monster.name, monster %>
+      </li>
+  <% end %>
+</ul>
+
+<%= link_to "New Monster", new_monster_path %>
+
+<%= render "import" %>
+

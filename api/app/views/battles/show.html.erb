@@ -1,0 +1,12 @@
+<h1><%= @battle.winner %></h1>
+
+<p><%= @monster.monsterA %></p>
+<p><%= @monster.monsterB %></p>
+<ul>
+
+  <li><%= link_to "Destroy", battle_path(@battle), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  } %></li>
+</ul>
+

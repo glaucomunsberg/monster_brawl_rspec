@@ -1,0 +1,21 @@
+services:
+  api:
+    command: [/bin/sh, -c, 'bundle exec puma -C config/puma.rb']
+    ports:
+      - 3000:3000
+    build:
+      context: .
+      dockerfile: docker/api/Dockerfile
+    image: api_server
+      #  condition: service_started
+    #network_mode: host
+    volumes:
+      - "./api:/app"
+    env_file:
+      - docker/api/.env
+    healthcheck:
+      test: curl http://0.0.0.0:3000/health_check || exit 1
+      interval: 10s
+      start_period: 20s
+      timeout: 10s
+      retries: 5

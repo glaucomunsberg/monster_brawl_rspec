@@ -1,0 +1,53 @@
+<%= form_with model: monster do |form| %>
+    <div>
+      <%= form.label :name %><br>
+      <%= form.text_field :name %>
+      <% monster.errors.full_messages_for(:name).each do |message| %>
+        <div><%= message %></div>
+      <% end %>
+    </div>
+  
+    <div>
+      <%= form.label :imageUrl %><br>
+      <%= form.text_field :imageUrl %>
+      <% monster.errors.full_messages_for(:name).each do |message| %>
+        <div><%= message %></div>
+      <% end %>
+    </div>
+
+    <div>
+      <%= form.label :attack %><br>
+      <%= form.text_field :attack %>
+      <% monster.errors.full_messages_for(:attack).each do |message| %>
+        <div><%= message %></div>
+      <% end %>
+    </div>
+
+    <div>
+      <%= form.label :defense %><br>
+      <%= form.text_field :defense %>
+      <% monster.errors.full_messages_for(:defense).each do |message| %>
+        <div><%= message %></div>
+      <% end %>
+    </div>
+
+    <div>
+      <%= form.label :hp %><br>
+      <%= form.text_field :hp %>
+      <% monster.errors.full_messages_for(:hp).each do |message| %>
+        <div><%= message %></div>
+      <% end %>
+    </div>
+
+    <div>
+      <%= form.label :speed %><br>
+      <%= form.text_field :speed %>
+      <% monster.errors.full_messages_for(:speed).each do |message| %>
+        <div><%= message %></div>
+      <% end %>
+    </div>
+  
+    <div>
+      <%= form.submit %>
+    </div>
+<% end %>

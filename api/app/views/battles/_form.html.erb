@@ -1,0 +1,21 @@
+<%= form_with model: battle do |form| %>
+    <div>
+      <%= form.label :monsterA %><br>
+      <%= form.text_field :monsterA %>
+      <% battle.errors.full_messages_for(:monsterA).each do |message| %>
+        <div><%= message %></div>
+      <% end %>
+    </div>
+  
+    <div>
+      <%= form.label :monsterB %><br>
+      <%= form.text_field :monsterB %>
+      <% battle.errors.full_messages_for(:monsterB).each do |message| %>
+        <div><%= message %></div>
+      <% end %>
+    </div>
+    
+    <div>
+      <%= form.submit %>
+    </div>
+<% end %>
